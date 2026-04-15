@@ -249,3 +249,41 @@ body {
     color: #fff;
     transform: translateX(4px);
 }
+
+/* VERSIONE PICCOLA DELLA PAGINA PREVENTIVO */
+.preventivo-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.preventivo-wrapper h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Form più compatto */
+.form-preventivo input,
+.form-preventivo select,
+.form-preventivo textarea {
+    padding: 14px;
+    margin-bottom: 22px;
+    font-size: 16px;
+}
+
+/* Pulsante rosso come prima */
+.form-preventivo button {
+    background: #ff3d3d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.form-preventivo button:hover {
+    background: #e22f2f;
+}
