@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richiedi un Preventivo – Video House Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">🎬 Video House Club</div>
+
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="#">Servizi</a>
+            <a href="#">Noleggio & Vendita</a>
+            <a href="#">Portfolio</a>
+            <a href="preventivo.html">Richiedi un preventivo</a>
+        </nav>
+    </aside>
+
+    <!-- CONTENUTO -->
+    <main class="content">
+
+        <section class="services">
+            <h2>Richiedi un preventivo</h2>
+            <p style="text-align:center; max-width:600px; margin:0 auto 40px;">
+                Compila il modulo qui sotto e ti risponderemo entro 24 ore con un preventivo dettagliato.
+            </p>
+
+            <form class="form-preventivo" style="max-width:600px; margin:0 auto;">
+                
+                <label>Nome e Cognome</label>
+                <input type="text" required>
+
+                <label>Email</label>
+                <input type="email" required>
+
+                <label>Telefono (opzionale)</label>
+                <input type="text">
+
+                <label>Tipo di servizio</label>
+                <select required>
+                    <option value="">Seleziona un servizio</option>
+                    <option>Riversamento VHS</option>
+                    <option>Digitalizzazione Super8</option>
+                    <option>Montaggio Video</option>
+                    <option>Restauro digitale</option>
+                </select>
+
+                <label>Descrizione del materiale</label>
+                <textarea rows="5" required></textarea>
+
+                <label>Quantità (numero cassette, pellicole, ecc.)</label>
+                <input type="number" min="1">
+
+                <button class="btn-primary" type="submit">Invia richiesta</button>
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
