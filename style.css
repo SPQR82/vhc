@@ -174,7 +174,7 @@ body {
     color: #555;
 }
 
-/* FORM PREVENTIVO – versione migliorata */
+/* FORM PREVENTIVO */
 .form-preventivo {
     max-width: 700px;
     margin: 0 auto;
@@ -209,7 +209,7 @@ body {
     padding: 18px;
     font-size: 20px;
     margin-top: 10px;
-    }
+}
 
 /* SOTTOMENU NOLEGGIO & VENDITA */
 .submenu-wrapper {
@@ -231,7 +231,7 @@ body {
 }
 
 .submenu {
-    display: none; /* IMPORTANTE: chiuso all'avvio */
+    display: none;
     margin-left: 10px;
     border-left: 1px solid rgba(255,255,255,0.2);
     padding-left: 10px;
@@ -249,4 +249,3 @@ body {
     color: #fff;
     transform: translateX(4px);
 }
-
