@@ -6,36 +6,52 @@
     <title>Richiedi un Preventivo – Video House Club</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- STILI SOLO PER QUESTA PAGINA (modulo più piccolo) -->
+    <!-- STILI SOLO PER QUESTA PAGINA (versione elegante e compatta) -->
     <style>
         .form-preventivo {
-            max-width: 480px !important; /* ridotto da 600 */
+            max-width: 420px !important; /* molto più elegante */
             margin: 0 auto;
             padding: 10px 0;
         }
 
         .form-preventivo label {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 16px;
+            margin-bottom: 6px;
             display: block;
             font-weight: 600;
+            color: #333;
         }
 
         .form-preventivo input,
         .form-preventivo select,
         .form-preventivo textarea {
             width: 100%;
-            padding: 14px; /* ridotto da 18 */
-            font-size: 16px; /* ridotto da 18 */
-            margin-bottom: 22px; /* ridotto da 32 */
-            border: 1px solid #ccc;
+            padding: 12px; /* più fine */
+            font-size: 15px; /* più elegante */
+            margin-bottom: 18px; /* meno spazio */
+            border: 1px solid #bbb;
             border-radius: 6px;
+            background: #fafafa;
+        }
+
+        .form-preventivo textarea {
+            resize: vertical;
         }
 
         .form-preventivo button {
             width: 100%;
-            padding: 16px;
-            font-size: 18px;
+            padding: 14px;
+            font-size: 17px;
+            border-radius: 6px;
+            background: #c62828;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .form-preventivo button:hover {
+            background: #a71f1f;
         }
     </style>
 </head>
@@ -60,7 +76,7 @@
 
         <section class="services">
             <h2>Richiedi un preventivo</h2>
-            <p style="text-align:center; max-width:600px; margin:0 auto 40px;">
+            <p style="text-align:center; max-width:500px; margin:0 auto 30px;">
                 Compila il modulo qui sotto e ti risponderemo entro 24 ore con un preventivo dettagliato.
             </p>
 
@@ -85,15 +101,15 @@
                 </select>
 
                 <label>Descrizione del materiale</label>
-                <textarea rows="5" required></textarea>
+                <textarea rows="4" required></textarea>
 
                 <label>Quantità (numero cassette, pellicole, ecc.)</label>
                 <input type="number" min="1">
 
-                <button class="btn-primary" type="submit">Invia richiesta</button>
+                <button type="submit">Invia richiesta</button>
 
                 <!-- INFORMATIVA PRIVACY -->
-                <p style="font-size:14px; color:#666; margin-top:20px; text-align:center;">
+                <p style="font-size:13px; color:#666; margin-top:15px; text-align:center;">
                     I dati inviati verranno utilizzati esclusivamente per rispondere alla tua richiesta di preventivo.
                     Non verranno salvati, condivisi o utilizzati per altri scopi.
                 </p>
