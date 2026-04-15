@@ -90,5 +90,14 @@
 
     </main>
 
+ <!-- SCRIPT PER APRIRE/CHIUDERE IL SOTTOMENU -->
+    <script>
+        document.querySelector('.submenu-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const menu = document.querySelector('.submenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+
 </body>
 </html>
