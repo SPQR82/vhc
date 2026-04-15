@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video House Club – Digitalizziamo il passato</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- STILI SOLO PER IL SOTTOMENU -->
+    <style>
+        .submenu-wrapper {
+            margin-bottom: 10px;
+        }
+
+        .submenu-toggle {
+            display: block;
+            color: #ccc;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .submenu {
+            display: none;
+            margin-left: 10px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 10px;
+        }
+
+        .submenu a {
+            display: block;
+            color: #aaa;
+            padding: 6px 0;
+            font-size: 15px;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,8 +42,21 @@
         <div class="logo">🎬 Video House Club</div>
 
         <nav class="menu">
+
             <a href="#">Servizi</a>
-            <a href="#">Noleggio & Vendita</a>
+
+            <!-- SOTTO-MENU NOLEGGIO & VENDITA -->
+            <div class="submenu-wrapper">
+                <a href="#" class="submenu-toggle">Noleggio & Vendita ▾</a>
+
+                <div class="submenu">
+                    <a>DVD</a>
+                    <a>BLURAY</a>
+                    <a>VINILI</a>
+                    <a>CD</a>
+                </div>
+            </div>
+
             <a href="#">Chi siamo</a>
             <a href="contatti.html">Contatti</a>
         </nav>
@@ -62,6 +103,15 @@
         </section>
 
     </main>
+
+    <!-- SCRIPT PER APRIRE/CHIUDERE IL SOTTOMENU -->
+    <script>
+        document.querySelector('.submenu-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            const menu = document.querySelector('.submenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
 
 </body>
 </html>
