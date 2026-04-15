@@ -1,39 +1,50 @@
-body {
+/* RESET BASE */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Inter', sans-serif;
     background: #ffffff;
     color: #333;
     display: flex;
+    overflow-x: hidden;
 }
 
 /* SIDEBAR */
 .sidebar {
     width: 240px;
-    background: #111;
+    background: #0d0d0d;
     color: white;
     padding: 40px 20px;
     height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
+    border-right: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 40px;
+    letter-spacing: 1px;
 }
 
 .menu a {
     display: block;
-    color: #ddd;
+    color: #ccc;
     text-decoration: none;
     padding: 12px 0;
     font-size: 18px;
+    transition: 0.2s ease;
 }
 
 .menu a:hover {
     color: #fff;
+    transform: translateX(4px);
 }
 
 /* MAIN CONTENT */
@@ -45,7 +56,7 @@ body {
 /* HERO CINEMATOGRAFICO */
 .hero {
     position: relative;
-    height: 70vh;
+    height: 75vh;
     background: url('hero-cinema.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -58,7 +69,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.35);
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.25)
+    );
 }
 
 .hero-text {
@@ -66,48 +80,68 @@ body {
     text-align: center;
     color: white;
     max-width: 700px;
+    padding: 0 20px;
 }
 
 .hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .hero-text p {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    opacity: 0.9;
 }
 
+/* BOTTONI */
 .btn-primary {
     background: #ff3d3d;
     color: white;
-    padding: 12px 24px;
+    padding: 12px 26px;
     border-radius: 6px;
     text-decoration: none;
     margin-right: 10px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #e22f2f;
 }
 
 .btn-secondary {
     background: #ffffff;
     color: #333;
-    padding: 12px 24px;
+    padding: 12px 26px;
     border-radius: 6px;
     text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #f0f0f0;
 }
 
 /* SERVIZI */
 .services {
-    padding: 60px;
+    padding: 60px 40px;
 }
 
 .services h2 {
     text-align: center;
     margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
@@ -116,18 +150,26 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.25s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .service-box img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
 }
 
 .service-box h3 {
     margin: 20px;
+    font-size: 20px;
 }
 
 .service-box p {
     margin: 0 20px 20px;
+    color: #555;
 }
