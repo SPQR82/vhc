@@ -174,24 +174,39 @@ body {
     color: #555;
 }
 
+/* FORM PREVENTIVO – versione migliorata */
+.form-preventivo {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
 .form-preventivo label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     font-weight: 600;
+    font-size: 20px;
 }
 
 .form-preventivo input,
 .form-preventivo select,
 .form-preventivo textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: 18px;
+    margin-bottom: 32px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    font-size: 18px;
+    background: #fff;
+}
+
+.form-preventivo textarea {
+    resize: vertical;
 }
 
 .form-preventivo button {
     width: 100%;
+    padding: 18px;
+    font-size: 20px;
     margin-top: 10px;
-}
+    }
