@@ -5,92 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richiedi un Preventivo – Video House Club</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- STILI SOLO PER QUESTA PAGINA (versione elegante e compatta) -->
-    <style>
-        .form-preventivo {
-            max-width: 420px !important; /* molto più elegante */
-            margin: 0 auto;
-            padding: 10px 0;
-        }
-
-        .form-preventivo label {
-            font-size: 16px;
-            margin-bottom: 6px;
-            display: block;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-preventivo input,
-        .form-preventivo select,
-        .form-preventivo textarea {
-            width: 100%;
-            padding: 12px; /* più fine */
-            font-size: 15px; /* più elegante */
-            margin-bottom: 18px; /* meno spazio */
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            background: #fafafa;
-        }
-
-        .form-preventivo textarea {
-            resize: vertical;
-        }
-
-        .form-preventivo button {
-            width: 100%;
-            padding: 14px;
-            font-size: 17px;
-            border-radius: 6px;
-            background: #c62828;
-            border: none;
-            color: white;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .form-preventivo button:hover {
-            background: #a71f1f;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="logo">🎬 Video House Club</div>
+    <!-- SIDEBAR DINAMICA -->
+    <div id="sidebar"></div>
 
-        <nav class="menu">
-
-            <a href="#">Servizi</a>
-
-            <!-- SOTTO-MENU NOLEGGIO & VENDITA -->
-            <div class="submenu-wrapper">
-                <a href="#" class="submenu-toggle">Noleggio & Vendita ▾</a>
-
-                <div class="submenu">
-                    <a>DVD</a>
-                    <a>BLURAY</a>
-                    <a>VINILI</a>
-                    <a>CD</a>
-                </div>
-            </div>
-
-            <a href="#">Chi siamo</a>
-            <a href="contatti.html">Contatti</a>
-        </nav>
-    </aside>
-
-    <!-- CONTENUTO -->
     <main class="content">
 
         <section class="services">
             <h2>Richiedi un preventivo</h2>
-            <p style="text-align:center; max-width:500px; margin:0 auto 30px;">
-                Compila il modulo qui sotto e ti risponderemo entro 24 ore con un preventivo dettagliato.
-            </p>
 
             <form class="form-preventivo">
 
@@ -115,16 +40,10 @@
                 <label>Descrizione del materiale</label>
                 <textarea rows="4" required></textarea>
 
-                <label>Quantità (numero cassette, pellicole, ecc.)</label>
+                <label>Quantità</label>
                 <input type="number" min="1">
 
                 <button type="submit">Invia richiesta</button>
-
-                <!-- INFORMATIVA PRIVACY -->
-                <p style="font-size:13px; color:#666; margin-top:15px; text-align:center;">
-                    I dati inviati verranno utilizzati esclusivamente per rispondere alla tua richiesta di preventivo.
-                    Non verranno salvati, condivisi o utilizzati per altri scopi.
-                </p>
 
             </form>
 
@@ -132,13 +51,21 @@
 
     </main>
 
-<!-- SCRIPT PER APRIRE/CHIUDERE IL SOTTOMENU -->
+    <!-- SCRIPT PER CARICARE LA SIDEBAR -->
     <script>
-        document.querySelector('.submenu-toggle').addEventListener('click', function(e) {
+    fetch("sidebar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("sidebar").innerHTML = data;
+
+        const toggle = document.querySelector('.submenu-toggle');
+        const submenu = document.querySelector('.submenu');
+
+        toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            const menu = document.querySelector('.submenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
         });
+      });
     </script>
 
 </body>
