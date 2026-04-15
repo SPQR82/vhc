@@ -5,75 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti – Video House Club</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Stili solo per questa pagina -->
-    <style>
-        .contatti-box {
-            max-width: 420px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .contatti-box h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .contatti-box p {
-            font-size: 16px;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .contatti-box a {
-            color: #c62828;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contatti-box a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="logo">🎬 Video House Club</div>
+    <!-- SIDEBAR DINAMICA -->
+    <div id="sidebar"></div>
 
-        <nav class="menu">
-
-            <a href="#">Servizi</a>
-
-            <!-- SOTTO-MENU NOLEGGIO & VENDITA -->
-            <div class="submenu-wrapper">
-                <a href="#" class="submenu-toggle">Noleggio & Vendita ▾</a>
-
-                <div class="submenu">
-                    <a>DVD</a>
-                    <a>BLURAY</a>
-                    <a>VINILI</a>
-                    <a>CD</a>
-                </div>
-            </div>
-
-            <a href="#">Chi siamo</a>
-            <a href="contatti.html">Contatti</a>
-        </nav>
-    </aside>
-
-    <!-- CONTENUTO -->
     <main class="content">
 
         <section class="services">
             <h2>Contatti</h2>
 
             <div class="contatti-box">
-
                 <h3>📍 Indirizzo</h3>
-                <p>Via Catania n. 21/a<br>00162 Roma (RM)</p>
+                <p>Via Esempio 123<br>00100 Roma (RM)</p>
 
                 <h3>📞 Telefono</h3>
                 <p><a href="tel:+390612345678">06 1234 5678</a></p>
@@ -83,20 +29,27 @@
 
                 <h3>🕒 Orari</h3>
                 <p>Lunedì – Sabato<br>09:00 – 19:00</p>
-
             </div>
 
         </section>
 
     </main>
 
- <!-- SCRIPT PER APRIRE/CHIUDERE IL SOTTOMENU -->
+    <!-- SCRIPT PER CARICARE LA SIDEBAR -->
     <script>
-        document.querySelector('.submenu-toggle').addEventListener('click', function(e) {
+    fetch("sidebar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("sidebar").innerHTML = data;
+
+        const toggle = document.querySelector('.submenu-toggle');
+        const submenu = document.querySelector('.submenu');
+
+        toggle.addEventListener('click', function(e) {
             e.preventDefault();
-            const menu = document.querySelector('.submenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
         });
+      });
     </script>
 
 </body>
